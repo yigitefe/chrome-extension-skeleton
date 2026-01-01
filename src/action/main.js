@@ -9,6 +9,12 @@ storage.get('count').then((count) => {
     countElement.textContent = count || 0;
 });
 
+storage.get('color').then((color) => {
+    if (color) {
+        document.body.style.backgroundColor = color;
+    }
+});
+
 // Increment
 incrementBtn.addEventListener('click', async () => {
     const current = parseInt(countElement.textContent);
